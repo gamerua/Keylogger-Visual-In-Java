@@ -41,42 +41,43 @@ public class KeyLogger implements NativeKeyListener {
 
 		logger.info("Key logger has been started");
 
-		// задаим Значення
-		keyCounter.put("А", 17067);  
-		keyCounter.put("Б", 4088);  
-		keyCounter.put("В", 11221);  
-		keyCounter.put("Г", 2907);  
-		keyCounter.put("Ґ", 0);  
-		keyCounter.put("Д", 6995);  
-		keyCounter.put("Е", 10605);  
-		keyCounter.put("Є", 736);  
-		keyCounter.put("Ж", 2022);  
-		keyCounter.put("З", 4947);  
-		keyCounter.put("И", 13193);  
-		keyCounter.put("І", 10678);  
-		keyCounter.put("Ї", 1107);  
-		keyCounter.put("Й", 2417);  
-		keyCounter.put("К", 6309);  
-		keyCounter.put("Л", 7841);  
-		keyCounter.put("М", 6158);  
-		keyCounter.put("Н", 12295);  
-		keyCounter.put("О", 12295);  
-		keyCounter.put("П", 5356);  
-		keyCounter.put("Р", 8091);  
-		keyCounter.put("С", 7570);  
-		keyCounter.put("Т", 9852);  
-		keyCounter.put("У", 6692);  
-		keyCounter.put("Ф", 216);  
-		keyCounter.put("Х", 1919);  
-		keyCounter.put("Ц", 1457);  
-		keyCounter.put("Ч", 2592);  
-		keyCounter.put("Ш", 2169);  
-		keyCounter.put("Щ", 1167);  
-		keyCounter.put("Ь", 3683);  
-		keyCounter.put("Ю", 1817);  
-		keyCounter.put("Я", 3785);  
-		keyCounter.put(",", 2875);  
-		keyCounter.put(".", 5603);  
+		// Cyrillic Example
+		// Uncoment, if necessary
+		// keyCounter.put("А", 17067);  
+		// keyCounter.put("Б", 4088);  
+		// keyCounter.put("В", 11221);  
+		// keyCounter.put("Г", 2907);  
+		// keyCounter.put("Ґ", 0);  
+		// keyCounter.put("Д", 6995);  
+		// keyCounter.put("Е", 10605);  
+		// keyCounter.put("Є", 736);  
+		// keyCounter.put("Ж", 2022);  
+		// keyCounter.put("З", 4947);  
+		// keyCounter.put("И", 13193);  
+		// keyCounter.put("І", 10678);  
+		// keyCounter.put("Ї", 1107);  
+		// keyCounter.put("Й", 2417);  
+		// keyCounter.put("К", 6309);  
+		// keyCounter.put("Л", 7841);  
+		// keyCounter.put("М", 6158);  
+		// keyCounter.put("Н", 12295);  
+		// keyCounter.put("О", 12295);  
+		// keyCounter.put("П", 5356);  
+		// keyCounter.put("Р", 8091);  
+		// keyCounter.put("С", 7570);  
+		// keyCounter.put("Т", 9852);  
+		// keyCounter.put("У", 6692);  
+		// keyCounter.put("Ф", 216);  
+		// keyCounter.put("Х", 1919);  
+		// keyCounter.put("Ц", 1457);  
+		// keyCounter.put("Ч", 2592);  
+		// keyCounter.put("Ш", 2169);  
+		// keyCounter.put("Щ", 1167);  
+		// keyCounter.put("Ь", 3683);  
+		// keyCounter.put("Ю", 1817);  
+		// keyCounter.put("Я", 3785);  
+		// keyCounter.put(",", 2875);  
+		// keyCounter.put(".", 5603);  
 
 		init();
 
@@ -197,7 +198,7 @@ public void nativeKeyTyped(NativeKeyEvent e) {
                 }
             });
 		for (Map.Entry<String, Integer> entry : keyCounter.entrySet()) {
-			System.out.println("Ключ: " + entry.getKey() + ", Значення: " + entry.getValue());
+			System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
 		}
 		System.out.println("————————————————————————");
 }

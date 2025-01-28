@@ -3,8 +3,10 @@
 ![JDK](https://img.shields.io/badge/JDK-%3E%3D%20v8-blue)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-green.svg)](https://github.com/dhvakr/keylogger-in-java/graphs/commit-activity)
 
+![keylogger](keylogger.png)
+
 # Java-Keylogger
-A simple keylogger application implemented in Java. It uses [Native Hook](https://github.com/kwhat/jnativehook) library to add global listener for key presses.
+This is a fork key logger with visualisation. Base on a simple keylogger application implemented in Java. Origin repo [here](https://github.com/dhvakr/Keylogger-In-Java). It also uses [Native Hook](https://github.com/kwhat/jnativehook) library to add global listener for key presses.
 
 ## How to Build and Run Project
 TO build project: 
