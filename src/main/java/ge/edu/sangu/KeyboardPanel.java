@@ -13,6 +13,8 @@ public class KeyboardPanel extends JPanel {
     private final int STEP_AFTER_HEADER = 10;
     private final int STEP_AFTER_LAYOUT = 200;
 
+	private int maxPressing = 1;
+
     public KeyboardPanel(HashMap<String, Integer> keyCounter) {
         this.keyCounter = keyCounter;
         setPreferredSize(new Dimension(650, 650));
@@ -119,7 +121,7 @@ public class KeyboardPanel extends JPanel {
     private Color getHeatMapColor(int count) {
         // Визначаємо колір на основі кількості натискань
         if (count == 0) return Color.WHITE;
-        float intensity = Math.min(1.0f, count / 500.0f); // Max value when 500 pressed
+        float intensity = Math.min(1.0f, count / (float)maxPressing); // Max value when 500 pressed
         return new Color(1.0f, 1.0f - intensity, 1.0f - intensity);
     }
 
@@ -127,6 +129,10 @@ public class KeyboardPanel extends JPanel {
         this.keyCounter = keyCounter;
         repaint(); // Rewrite panel
     }
+
+	public void setMaxPressing(int mp) {
+		if (mp > maxPressing) maxPressing = mp;
+	}
 }
 
 

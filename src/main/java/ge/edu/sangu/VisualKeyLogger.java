@@ -42,18 +42,24 @@ public class VisualKeyLogger implements NativeKeyListener {
     }
 
     public void nativeKeyTyped(NativeKeyEvent e) {
-        String keyString = String.valueOf(e.getKeyChar()).toUpperCase();
+		char keyChar = e.getKeyChar();
+		System.out.println((int)keyChar);
+		if (((int)keyChar >= 44 && (int)keyChar <= 122) || ((int)keyChar >= 1072 && (int)keyChar <=1169)) {
 
-        keyCounter.put(keyString,
-                keyCounter.getOrDefault(keyString, 0) + 1);
+			String keyString = String.valueOf(keyChar).toUpperCase();
 
-        SwingUtilities.invokeLater(() -> {
-            if (keyboardPanel != null) {
-                keyboardPanel.updateKeyCounter(keyCounter);
-            }
-        });
+        	keyCounter.put(keyString,
+        	        keyCounter.getOrDefault(keyString, 0) + 1);
+			keyboardPanel.setMaxPressing(keyCounter.get(keyString));
 
-        printKeyCounts();
+        	SwingUtilities.invokeLater(() -> {
+        	    if (keyboardPanel != null) {
+        	        keyboardPanel.updateKeyCounter(keyCounter);
+        	    }
+        	});
+
+        	printKeyCounts();
+		}
     }
 
     public void nativeKeyPressed(NativeKeyEvent e) { }
